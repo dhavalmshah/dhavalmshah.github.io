@@ -1,0 +1,4 @@
+baseURL = 'http://www.thedevguys.in/'
+languageCode = 'en-us'
+title = "Dhaval's Blogs"
+theme = 'ananke'
