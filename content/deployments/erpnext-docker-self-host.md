@@ -40,7 +40,7 @@ To install these dependencies, run the following command:
 
 ```bash
 # Install some dependencies for ERPNext
-sudo apt install -y python3-dev python3-setuptools python3-pip mariadb-server redis-server nginx wkhtmltopdf curl sudo 
+sudo apt install -y curl sudo cron python3-dev python3-setuptools python3-pip mariadb-server redis-server nginx wkhtmltopdf git
 ```
 This command will install all the required packages and their dependencies.
 ## Step 3: Configure MariaDB Server for ERPNext Version 14
