@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dhaval&#39;s Blogs</title>
+    <link>http://www.thedevguys.in/</link>
+    <description>Recent content on Dhaval&#39;s Blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://www.thedevguys.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://www.thedevguys.in/deployments/erpnext-docker-self-host/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.thedevguys.in/deployments/erpnext-docker-self-host/</guid>
+      <description>How to Install ERPNext on a Docker ERPNext is a powerful and flexible software that lets you run your business smoothly. It covers all the essential aspects of your business, such as accounting, inventory, sales, purchasing, human resources, projects, and more. And the best part is, it&amp;rsquo;s free and open source. That means you can use it without paying a dime, and you can also peek under the hood and see how it works.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.thedevguys.in/how-to/get-authorize-net-credentials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.thedevguys.in/how-to/get-authorize-net-credentials/</guid>
+      <description>How to get an API key for Authorize.Net If you want to use Authorize.Net as your payment gateway, you need an API key to access its features and process transactions. An API key is a unique identifier that consists of two parts: an API Login ID and a Transaction Key. In this blog, I will show you how to get them in a few easy steps.
+Step 1: Log in to Authorize.</description>
+    </item>
+    
+  </channel>
+</rss>

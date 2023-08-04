@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Dhaval&#39;s Blogs</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="How to Install ERPNext on a Docker ERPNext is a powerful and flexible software that lets you run your business smoothly. It covers all the essential aspects of your business, such as accounting, inventory, sales, purchasing, human resources, projects, and more. And the best part is, it&rsquo;s free and open source. That means you can use it without paying a dime, and you can also peek under the hood and see how it works.">
+    <meta name="generator" content="Hugo 0.92.2" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="" />
+<meta property="og:description" content="How to Install ERPNext on a Docker ERPNext is a powerful and flexible software that lets you run your business smoothly. It covers all the essential aspects of your business, such as accounting, inventory, sales, purchasing, human resources, projects, and more. And the best part is, it&rsquo;s free and open source. That means you can use it without paying a dime, and you can also peek under the hood and see how it works." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.thedevguys.in/deployments/erpnext-docker-self-host/" /><meta property="article:section" content="deployments" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="How to Install ERPNext on a Docker ERPNext is a powerful and flexible software that lets you run your business smoothly. It covers all the essential aspects of your business, such as accounting, inventory, sales, purchasing, human resources, projects, and more. And the best part is, it&rsquo;s free and open source. That means you can use it without paying a dime, and you can also peek under the hood and see how it works.">
+
+<meta itemprop="wordCount" content="2081">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="How to Install ERPNext on a Docker ERPNext is a powerful and flexible software that lets you run your business smoothly. It covers all the essential aspects of your business, such as accounting, inventory, sales, purchasing, human resources, projects, and more. And the best part is, it&rsquo;s free and open source. That means you can use it without paying a dime, and you can also peek under the hood and see how it works."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Dhaval&#39;s Blogs
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        DEPLOYMENTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="how-to-install-erpnext-on-a-docker">How to Install ERPNext on a Docker</h1>
+<p>ERPNext is a powerful and flexible software that lets you run your business smoothly. It covers all the essential aspects of your business, such as accounting, inventory, sales, purchasing, human resources, projects, and more. And the best part is, it&rsquo;s free and open source. That means you can use it without paying a dime, and you can also peek under the hood and see how it works. Or even better, you can contribute to its development and make it even more awesome. You can find the source code of ERPNext on <a href="https://github.com/frappe/erpnext">GitHub</a>, where you can also report issues, suggest features, or join the community of developers and users.</p>
+<p>In this blog post, I will guide you through the steps to install ERPNext on a docker instance using a ready-made image. This image is called python:3.11-slim and it comes with Debian Buster and Python 3.11 pre-installed. All you need is some basic knowledge of docker and a few commands to get started. If you don&rsquo;t know what docker is, don&rsquo;t worry, it&rsquo;s not a scary monster that lives in the sea. It&rsquo;s a tool that lets you create and run isolated containers that contain everything you need to run an application. Think of it as a magic box that you can put your software in and take it anywhere you want. You can learn more about docker <a href="https://docs.docker.com/get-started/overview/">here</a>.</p>
+<p>Before we jump into the nitty gritty, let me tell you why I chose this image for ERPNext. First of all, it&rsquo;s based on Debian Buster, which is a stable and secure Linux distribution that powers many servers around the world. Second, it has Python 3.11 installed, which is the latest version of the programming language that ERPNext is written in. Python 3.11 has many new features and improvements that make ERPNext faster and better. Third, it&rsquo;s slim, which means it has only the essential packages and libraries that ERPNext needs to run. This makes the image smaller and lighter than other images that have extra stuff that ERPNext doesn&rsquo;t use. You can find the image on Docker Hub <a href="https://hub.docker.com/_/python">here</a>.</p>
+<p>Now that you know what we are going to use, let&rsquo;s get started with the installation process.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before we start, make sure you have the following:</p>
+<ul>
+<li>A docker instance running on your machine or cloud provider</li>
+<li>A terminal or SSH access to the docker instance</li>
+<li>A sudo user with root privileges on the docker instance</li>
+</ul>
+<h2 id="step-1-update-the-system-packages">Step 1: Update the System Packages</h2>
+<p>The first step is to update the system packages on the docker instance. This will ensure that we have the latest security patches and bug fixes. To do this, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Update the system packages</span>
+sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade -y
+</code></pre></div><p>This command will fetch the list of available packages from the repositories and upgrade any outdated packages.</p>
+<h2 id="step-2-install-some-dependencies-for-erpnext">Step 2: Install Some Dependencies for ERPNext</h2>
+<p>The next step is to install some dependencies for ERPNext. These are:</p>
+<ul>
+<li>python3-dev: This package contains the header files and libraries needed to build Python extensions.</li>
+<li>python3-setuptools: This package contains tools for packaging and distributing Python projects.</li>
+<li>python3-pip: This package contains the Python package manager that allows us to install Python modules from PyPI.</li>
+<li>mariadb-server: This package contains the MariaDB database server that will store the data for ERPNext.</li>
+<li>redis-server: This package contains the Redis server that will act as a cache and message broker for ERPNext.</li>
+<li>nginx: This package contains the Nginx web server that will serve the static files and proxy requests for ERPNext.</li>
+<li>wkhtmltopdf: This package contains a tool that converts HTML to PDF, which is used by ERPNext to generate reports and invoices.</li>
+<li>curl: This package contains a tool that transfers data from or to a server using various protocols.</li>
+</ul>
+<p>To install these dependencies, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Install some dependencies for ERPNext</span>
+sudo apt install -y curl sudo cron python3-dev python3-setuptools python3-pip mariadb-server redis-server nginx wkhtmltopdf git
+</code></pre></div><p>This command will install all the required packages and their dependencies.</p>
+<h2 id="step-3-configure-mariadb-server-for-erpnext-version-14">Step 3: Configure MariaDB Server for ERPNext Version 14</h2>
+<p>The next step is to configure the MariaDB server for ERPNext version 14. This version of ERPNext requires a specific collation setting for the database server, which is utf8mb4_unicode_ci. This setting ensures that the database can store and compare characters from different languages correctly.
+To configure this setting, we need to edit the file /etc/mysql/mariadb.conf.d/50-server.cnf and change the value of collation-server to utf8mb4_unicode_ci. To do this, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Configure mysql server for erpnext version 14</span>
+sudo sed -i <span style="color:#e6db74">&#39;s/^collation-server\s*=.*/collation-server = utf8mb4_unicode_ci/&#39;</span> /etc/mysql/mariadb.conf.d/50-server.cnf
+</code></pre></div><p>This command will use sed, a stream editor, to find and replace the collation-server line in the file with the desired value.</p>
+<h2 id="step-4-initialize-and-set-the-password-for-mariadb-server">Step 4: Initialize and Set the Password for MariaDB Server</h2>
+<p>The next step is to initialize and set the password for the MariaDB server. By default, the MariaDB server does not have a password for the root user, which is insecure. We need to set a password for the root user and use it later when creating a database for ERPNext.
+To initialize and set the password for the MariaDB server, run the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Now initialize and set the password</span>
+service mysql start
+mysql -e <span style="color:#e6db74">&#34;ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;erpnext&#39;&#34;</span>
+</code></pre></div><p>The first command will start the MariaDB service. The second command will use mysql, a command-line client, to execute an SQL statement that changes the password of the root user to erpnext. You can change this password to something more secure if you want.</p>
+<h2 id="step-5-create-a-user-for-erpnext-and-switch-to-it">Step 5: Create a User for ERPNext and Switch to It</h2>
+<p>The next step is to create a user for ERPNext and switch to it. We will use this user to run ERPNext and avoid using root or sudo privileges unnecessarily. We will also add this user to the sudo group so that we can execute some commands with root privileges when needed.
+To create a user for ERPNext and switch to it, run the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create a user for ERPNext and switch to it</span>
+sudo adduser erpnext --disabled-password --gecos <span style="color:#e6db74">&#34;&#34;</span>
+sudo usermod -aG sudo erpnext
+sudo su - erpnext
+</code></pre></div><p>The first command will create a user named erpnext with no password and no personal information. The second command will add the user to the sudo group. The third command will switch to the user&rsquo;s shell.</p>
+<h2 id="step-6-install-nvm-and-node">Step 6: Install NVM and Node</h2>
+<p>The next step is to install NVM and Node. NVM is a tool that allows us to manage multiple versions of Node on the same machine. Node is a JavaScript runtime that is used by ERPNext to run some scripts and tools.
+To install NVM and Node, run the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># install nvm and node</span>
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+exit
+su - erpnext
+</code></pre></div><p>The first command will download and execute the install script for NVM from its GitHub repository. The second command will exit the current shell and return to the root user. The third command will switch back to the erpnext user&rsquo;s shell.</p>
+<h2 id="step-7-clone-the-erpnext-repository-from-github">Step 7: Clone the ERPNext Repository from GitHub</h2>
+<p>The next step is to clone the ERPNext repository from GitHub. This repository contains the source code and files for ERPNext. We will use the &ndash;depth 1 option to clone only the latest commit and save some disk space.
+To clone the ERPNext repository from GitHub, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Clone the ERPNext repository from GitHub</span>
+git clone https://github.com/frappe/erpnext.git --depth <span style="color:#ae81ff">1</span>
+</code></pre></div><p>This command will use git, a version control system, to clone the repository from its URL.</p>
+<h2 id="step-8-install-the-frappe-bench-tool-using-pip">Step 8: Install the frappe-bench Tool Using pip</h2>
+<p>The next step is to install the frappe-bench tool using pip. This tool is a command-line interface that helps us manage multiple sites and apps for ERPNext. It also handles the installation, configuration, backup, and update of ERPNext.
+To install the frappe-bench tool using pip, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Install the frappe-bench tool using pip</span>
+pip3 install frappe-bench
+</code></pre></div><p>This command will use pip3, a Python package manager, to install frappe-bench from PyPI.</p>
+<h2 id="step-9-initialize-a-new-bench-with-erpnext">Step 9: Initialize a New Bench with ERPNext</h2>
+<p>The next step is to initialize a new bench with ERPNext. A bench is a folder that contains one or more sites and apps for ERPNext. We will use the &ndash;frappe-branch version-13 option to specify that we want to use version 13 of ERPNext, which is the latest stable release as of this writing. We will also use the &ndash;python python3 option to specify that we want to use Python 3 as the interpreter.
+To initialize a new bench with ERPNext, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Initialize a new bench with ERPNext</span>
+bench init erpnext-bench --frappe-branch version-13 --python python3
+</code></pre></div><p>This command will use bench, a command-line interface, to create a new folder named erpnext-bench and install frappe, an app framework that powers ERPNext, in it.</p>
+<h2 id="step-10-change-the-directory-to-the-bench-folder">Step 10: Change the Directory to the Bench Folder</h2>
+<p>The next step is to change the directory to the bench folder. This folder contains all the files and folders related to our ERPNext installation. We need to be in this folder to execute some commands later.
+To change the directory to the bench folder, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Change the directory to the bench folder</span>
+cd erpnext-bench
+</code></pre></div><p>This command will use cd, a shell builtin, to change the current working directory.</p>
+<h2 id="step-11-add-erpnext-as-an-app-to-the-bench">Step 11: Add ERPNext as an App to the Bench</h2>
+<p>The next step is to add ERPNext as an app to the bench. An app is a collection of modules, doctypes, pages, reports, and scripts that provide some functionality for ERPNext. We will use the &ndash;branch version-13 option to specify that we want to use version 13 of ERPNext, which is compatible with frappe version 13.
+To add ERPNext as an app to the bench, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add ERPNext as an app to the bench</span>
+bench get-app erpnext https://github.com/frappe/erpnext.git --branch version-13
+</code></pre></div><p>This command will use bench, a command-line interface, to download and install ERPNext from its GitHub repository in our bench folder.</p>
+<h2 id="step-12-install-the-erpnext-app-on-a-new-site">Step 12: Install the ERPNext App on a New Site</h2>
+<p>The next step is to install the ERPNext app on a new site. A site is a folder that contains the database and files for a single instance of ERPNext. We can have multiple sites on the same bench and switch between them. We will use the &ndash;mariadb-root-password erpnext option to specify the password for the MariaDB root user that we set earlier. We will also use the &ndash;admin-password admin123 option to specify the password for the administrator user of ERPNext. You can change these passwords to something more secure if you want.
+To install the ERPNext app on a new site, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Install the ERPNext app on a new site</span>
+bench new-site erpnext.local --mariadb-root-password erpnext --admin-password admin123
+</code></pre></div><p>This command will use bench, a command-line interface, to create a new folder named erpnext.local and initialize a database and files for it. It will also install frappe and ERPNext on the site.</p>
+<h2 id="step-13-install-erpnext-on-the-site">Step 13: Install ERPNext on the Site</h2>
+<p>The next step is to install ERPNext on the site. This step will set up some default data and configurations for ERPNext, such as the company name, currency, timezone, email settings, etc. We will use the &ndash;site erpnext.local option to specify the name of the site that we want to install ERPNext on.
+To install ERPNext on the site, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Install ERPNext on the site</span>
+bench --site erpnext.local install-app erpnext
+</code></pre></div><p>This command will use bench, a command-line interface, to install ERPNext on the site erpnext.local.</p>
+<h2 id="step-14-start-the-bench-server">Step 14: Start the Bench Server</h2>
+<p>The final step is to start the bench server. This step will start the processes that run ERPNext, such as the web server, the background workers, and the scheduler. We will use the bench start command to start the server.
+To start the bench server, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Start the bench server</span>
+bench start
+</code></pre></div><p>This command will use bench, a command-line interface, to start the server and display some logs and messages.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We have successfully installed ERPNext on a docker instance from image python:3.11-slim using some commands. We can now access our ERPNext site by visiting <a href="http://erpnext.local:8000">http://erpnext.local:8000</a> in our browser. We can log in with the username Administrator and the password admin123 that we set earlier.
+I hope you found this blog post helpful and informative. If you have any questions or feedback, please leave a comment below. Thank you for reading! 😊</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://www.thedevguys.in/" >
+    &copy;  Dhaval's Blogs 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deployments on Dhaval&#39;s Blogs</title>
+    <link>http://www.thedevguys.in/deployments/</link>
+    <description>Recent content in Deployments on Dhaval&#39;s Blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://www.thedevguys.in/deployments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://www.thedevguys.in/deployments/erpnext-docker-self-host/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.thedevguys.in/deployments/erpnext-docker-self-host/</guid>
+      <description>How to Install ERPNext on a Docker ERPNext is a powerful and flexible software that lets you run your business smoothly. It covers all the essential aspects of your business, such as accounting, inventory, sales, purchasing, human resources, projects, and more. And the best part is, it&amp;rsquo;s free and open source. That means you can use it without paying a dime, and you can also peek under the hood and see how it works.</description>
+    </item>
+    
+  </channel>
+</rss>
